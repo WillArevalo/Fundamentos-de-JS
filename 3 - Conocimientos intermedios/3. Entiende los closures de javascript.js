@@ -44,3 +44,18 @@ prefijoSuper("malo")
 prefijoSuper("bruto")
 prefijoSuper("vista")
 prefijoIn("comodo")
+
+//Otro ejemplo podria ser, hacer generadores, mira el siguiente ejemplo
+
+functionsumar(x){
+  returnfunction(y){
+    return x + y;
+  };
+}
+
+//Por medio de esa funcion podemos generar mas funciones que recuerden la variable ‘x’ formandose un closure
+
+var suma10 = sumar(10);
+var suma20 = sumar(20);
+console.log(suma10(2));  // 12
+console.log(suma20(2));  // 22
