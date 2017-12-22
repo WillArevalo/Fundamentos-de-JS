@@ -15,25 +15,7 @@
 // )}
 // //Promise es un constructor que recibe una función con dos argumentos.
 
-function get(URL){
-  return new Promise(function(resolve, reject){
-    const xhr = new XMLHttpRequest();
-    
-    xhr.onreadystatechange = function(){
-      const DONE = 4
-      const OK = 200
-      if(this.readyState === DONE){
-        if(this.status === OK){
-           resolve(JSON.parse(this.responseText))
-        } else {
-           reject(new Error(`Se produjo un error al realizar el request : ${this.status}`))
-        }
-      } 
-    }
-    xhr.open('GET', URL);
-    xhr.send(null);
-  })
-}
+
 //obteniendo el error
 function handleError(err){
   console.log(`Request Failed: ${err}`)
@@ -55,6 +37,6 @@ fetch('https://www.swapi.co/api/people/1')
     console.log('luke', luke)
     console.log(`El nombre completo de luke es ${luke.name} y el pais natal de el es ${luke.homeworld.name}`)
   })
-  .catch((err) => handleError(err))
+  .catch(err => handleError(err))
 
   
