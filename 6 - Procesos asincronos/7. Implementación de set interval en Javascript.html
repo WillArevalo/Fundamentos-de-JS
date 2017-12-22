@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SetInterval</title>
+</head>
+<body>
+	<h1 id="timer">Han pasado 0 segundos</h1>
+	<script>
+		//setInterval(que voy a hacer?, cada cuanto tiempo debo)
+		// let time = 1;
+		// setInterval(() => {
+		// 	console.log('Ha pasado 1 segundo');
+		// 	time++;
+		// 	console.log(`En total han pasado ${time} segundos`)
+		// }, 1000)
+		const timer = document.getElementById('timer');
+		let time = 1;
+		setInterval(() => {
+			timer.textContent = `Han pasado ${time} segundos`;
+			time++;
+		},1000)
+	</script>
+</body>
+</html>
