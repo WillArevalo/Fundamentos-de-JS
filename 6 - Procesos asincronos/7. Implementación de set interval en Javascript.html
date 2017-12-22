@@ -6,6 +6,7 @@
 </head>
 <body>
 	<h1 id="timer">Han pasado 0 segundos</h1>
+	<button id="cancel-button">Cancel</button>
 	<script>
 		//setInterval(que voy a hacer?, cada cuanto tiempo debo)
 		// let time = 1;
@@ -14,12 +15,16 @@
 		// 	time++;
 		// 	console.log(`En total han pasado ${time} segundos`)
 		// }, 1000)
+		const $cancelButton = document.getElementById('cancel-button');
 		const timer = document.getElementById('timer');
 		let time = 1;
-		setInterval(() => {
+		const interval = setInterval(() => {
 			timer.textContent = `Han pasado ${time} segundos`;
 			time++;
 		},1000)
+		$cancelButton.addEventListener('click', () => {
+			clearInterval(interval);
+		});
 	</script>
 </body>
 </html>

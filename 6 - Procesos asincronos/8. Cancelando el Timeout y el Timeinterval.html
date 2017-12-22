@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Timeout</title>
+</head>
+<body>
+	<h1>Timeout</h1>
+	<button id="cancel-button">Cancel</button>
+	<script>
+		//setTimeout(que vamos a hacer, en cuanto tiempo?)
+		// setTimeout(() => {
+		// 	console.log("Ha pasado 5 segundos")
+		// }, 5000 )
+		const $cancelButton = document.getElementById('cancel-button');
+		//$cancelButton.addEventListener('Que evento', que hago);
+		const timeout = setTimeout(() => {
+		 	document.write('Han pasado 5 segundos');
+		}, 5000 )
+		$cancelButton.addEventListener('click', () => {
+			clearTimeout(timeout);
+		});
+	</script>
+</body>
+</html>
