@@ -1,0 +1,22 @@
+{
+  "name": "platzom",
+  "version": "0.1.0",
+  "description": "Traductor de idioma Platzom",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WillArevalo/Fundamentos-de-JS/tree/master/8%20-%20Creando%20un%20paquete%20para%20npm"
+  },
+  "keywords": [
+    "platzom",
+    "platzi",
+    "fundamentos",
+    "javascript",
+    "js"
+  ],
+  "author": "Will Arevalo <willarevalo.developer@gmail.com> (willarevalo.github.io)",
+  "license": "MIT"
+}
