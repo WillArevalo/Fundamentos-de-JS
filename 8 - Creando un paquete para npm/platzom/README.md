@@ -16,10 +16,14 @@ npm install platzom
 
 ## Uso
 
+```
+import platzom from 'platzom'
+
 platzom("Programar") //Program
 platzom("Zarpar") //Zarppe
 platzom("abecedario") //abece-dario
 platzom("anitalavalatina") //AnItAlAvALaTiNa
+```
 
 ## Creditos
 
