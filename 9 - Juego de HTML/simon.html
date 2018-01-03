@@ -38,10 +38,45 @@
         <div class="key" data-key= "78">n</div>
         <div class="key" data-key= "77">m</div>
       </div>
+    <script type="text/javascript" src="https://unpkg.com/sweetalert2@7.1.3/dist/sweetalert2.all.js"></script>
     <script>
       //Niveles
       const levels = 15
       let keys = generateKeys(levels)
+
+      function nextLevel(LvlNow){
+        if (LvlNow == levels){
+          return alert('Ganaste')
+        }
+
+        alert(`Nivel ${LvlNow + 1}`)
+        for (let i = 0; i <= LvlNow; i++){
+          setTimeout(() => activate(keys[i]), 1000 * (i + 1))
+        }
+        let i = 0
+        let keyNow = keys[i]
+        window.addEventListener('keydown', onkeydown)
+
+        function onkeydown(ev) {
+          if(ev.keyCode == keyNow){
+            activate(keyNow, {success : true})
+            i++
+            if(i > LvlNow){
+              window.removeEventListener('keydown', onkeydown)
+              setTimeout(() => nextLevel(i), 1500)
+            }
+            keyNow = keys[i]
+          } else {
+            activate(ev.keyCode, {fail : true})
+            window.removeEventListener('keydown', onkeydown)
+            setTimeout(() => alert(`Perdiste`), 1000 )
+          }
+
+        }
+      }
+      
+
+      nextLevel(0)
 
       function generateKeys(levels){
         //Vamos a returnar un nuevo array de tantas posiciones como niveles alla,
@@ -69,7 +104,7 @@
         } else if(options.fail) {
           el.classList.add('fail')
         }
-        setTimeout(() => deactive(el), 2000)
+        setTimeout(() => deactive(el), 1000)
       }
       function deactive(el){
         el.className = 'key'
